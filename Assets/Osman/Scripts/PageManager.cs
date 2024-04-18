@@ -5,13 +5,11 @@ using UnityEngine;
 
 public class PageManager : MonoBehaviour
 {
-    public List<int> _nextChanges = new List<int>();
     public bool hasChoise;
-    [SerializeField]
-    private int _pageIndex;
+    [SerializeField] private int _pageIndex;
     public int _panelCount;
     public List<GameObject> _panels = new List<GameObject>();
-    private Animator _pageAnim;
+    public Animator _pageAnim;
     int _panelIndex = 0;
     private OpenPanels _openPanels;
     private ChangeManager _changePages;
@@ -24,37 +22,40 @@ public class PageManager : MonoBehaviour
     }
     void Update()
     {
-        if(hasChoise==true)
-
         OpenPanel();
     }
 
     void OpenPanel()
-    {  
+    {
         if (Input.GetMouseButtonDown(0))
         {
-            if (_panelIndex != _panelCount)
+            if (hasChoise == true)
             {
-                _openPanels.Open(_panels[_panelIndex]);
-                _panelIndex++;
+                if (_panelIndex != _panelCount)
+                {
+                    _openPanels.Open(_panels[_panelIndex]);
+                    _panelIndex++;
+                }
+                else
+                {
+                    //buraya sayfa değiştirme animasyonu eklenecek
+                    _changePages.ChangePage(_pageIndex + 1);
+                }
             }
             else
             {
-                //buraya sayfa değiştirme animasyonu eklenecek
-                if (_changePages._pages[_pageIndex+1] == null)
-                    Debug.Log("Pages Over");
+                if (_panelIndex != _panelCount)
+                {
+                    _openPanels.Open(_panels[_panelIndex]);
+                    _panelIndex++;
+                }
                 else
                 {
-                    _changePages._pages[_pageIndex+1].SetActive(true);
-                    _pageAnim.SetTrigger("Change");
+                    _changePages.ChangePageWithChoise(_pageIndex + 1);
                 }
             }
-        }
-    }
 
-    void OpenChoisePanel()
-    {
-        
+        }
     }
 
     public void ClosePage()
