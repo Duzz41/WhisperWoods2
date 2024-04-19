@@ -129,7 +129,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2298615788199229482
 RectTransform:
   m_ObjectHideFlags: 0
@@ -223,7 +223,7 @@ Animator:
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 62aaa97409bf64d47a209a29c436752c, type: 2}
   m_CullingMode: 0
-  m_UpdateMode: 0
+  m_UpdateMode: 2
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -459,16 +459,32 @@ PrefabInstance:
     m_TransformParent: {fileID: 2298615788199229482}
     m_Modifications:
     - target: {fileID: 2071909484363825915, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1916178476246852472}
+    - target: {fileID: 2071909484363825915, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangePageWithChoise
+      value: ChooseNextPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2071909484363825915, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PageManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 2071909484363825915, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5104216938386514209, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1916178476246852472}
+    - target: {fileID: 5104216938386514209, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ChangePageWithChoise
+      value: ChooseNextPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 5104216938386514209, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PageManager, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 5104216938386514209, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument

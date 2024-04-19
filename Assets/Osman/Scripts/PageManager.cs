@@ -16,6 +16,8 @@ public class PageManager : MonoBehaviour
     int _panelIndex = 0;
     private OpenPanels _openPanels;
     private ChangeManager _changePages;
+    bool _pageChange = false;
+    bool stopGame = false;
 
     void Start()
     {
@@ -25,35 +27,72 @@ public class PageManager : MonoBehaviour
     }
     void Update()
     {
+        CloseAnimPage();
+
         OpenPanel();
+
     }
 
     void OpenPanel()
     {
-        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
+        {
+            PanelManagment();
+        }
+    }
+
+    void PanelManagment()
+    {
+        if (stopGame == false)
         {
             if (_pageChoises.Length == 1)
             {
                 if (_panelIndex != _panels.Count)
                 {
+
                     _openPanels.Open(_panels[_panelIndex]);
                     _panelIndex++;
+
                 }
                 else
                 {
-                    //buraya sayfa değiştirme animasyonu eklenecek
+
+                    stopGame = true;
                     _changePages.ChangePage(_pageChoises[0]);
+                    _pageAnim.SetTrigger("Change");
+
                 }
             }
             else
             {
                 if (_panelIndex != _panels.Count)
                 {
+
                     _openPanels.Open(_panels[_panelIndex]);
                     _panelIndex++;
+
                 }
             }
+        }
+    }
 
+    public void StopClick()
+    {
+        stopGame = false;
+    }
+
+    public void ChooseNextPage(int index)
+    {
+        _changePages.ChangePageWithChoise(index);
+        _pageChange = true;
+
+    }
+    public void CloseAnimPage()
+    {
+        if (_pageChange == true)
+        {
+            _pageAnim.SetTrigger("Change");
+            _pageChange = false;
         }
     }
 

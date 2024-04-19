@@ -5,17 +5,11 @@ using UnityEngine;
 public class ChangeManager : MonoBehaviour
 {
     public List<GameObject> _pages = new List<GameObject>();
-    private PageManager pageManager;
-    
-    void Start()
-    {
-        pageManager = GetComponentInChildren<PageManager>();
-    }
+
 
     public void ChangePageWithChoise(int index)
     {
         _pages[index].SetActive(true);
-        pageManager._pageAnim.SetTrigger("Change");
     }
 
     public void ChangePage(int index)
@@ -25,7 +19,6 @@ public class ChangeManager : MonoBehaviour
         else
         {
             _pages[index].SetActive(true);
-            pageManager._pageAnim.SetTrigger("Change");
         }
     }
 }

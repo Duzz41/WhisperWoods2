@@ -1787,6 +1787,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2298615788199229482, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
   m_PrefabInstance: {fileID: 7602367191659080437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7211101270508473480 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1916178476246852472, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+  m_PrefabInstance: {fileID: 7602367191659080437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1901019955966702108}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2bc481d41d8194c98b000b3bcb6404, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &7602367191659080437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1795,10 +1806,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2137511612}
     m_Modifications:
+    - target: {fileID: 1916178476246852472, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+      propertyPath: _pageChoises.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1916178476246852472, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+      propertyPath: _pageChoises.Array.data[1]
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2014782213519335676, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2137511613}
+      objectReference: {fileID: 7211101270508473480}
+    - target: {fileID: 2014782213519335676, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseNextPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 2014782213519335676, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PageManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 2298615788199229482, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1886,7 +1913,15 @@ PrefabInstance:
     - target: {fileID: 4747010947453010726, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2137511613}
+      objectReference: {fileID: 7211101270508473480}
+    - target: {fileID: 4747010947453010726, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ChooseNextPage
+      objectReference: {fileID: 0}
+    - target: {fileID: 4747010947453010726, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PageManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 6131003370481381887, guid: 281c8ded2bbe39543b45827ad4e9e8d4, type: 3}
       propertyPath: m_Name
       value: PageWithDifferentPathTemplate
