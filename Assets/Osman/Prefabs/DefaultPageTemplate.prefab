@@ -14,12 +14,12 @@ GameObject:
   - component: {fileID: 3535176975608200673}
   - component: {fileID: 3213840428256744299}
   m_Layer: 5
-  m_Name: Page1
+  m_Name: DefaultPageTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &7211101271228677054
 RectTransform:
   m_ObjectHideFlags: 0
@@ -92,12 +92,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2bc481d41d8194c98b000b3bcb6404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pageIndex: 0
-  _panelCount: 3
+  _pageID: 0
+  hasChoise: 0
+  _pageChoises: 01000000
   _panels:
   - {fileID: 3537479359650766512}
   - {fileID: 5885978468910250493}
   - {fileID: 3189356237412994538}
+  _pageAnim: {fileID: 0}
 --- !u!95 &3213840428256744299
 Animator:
   serializedVersion: 5

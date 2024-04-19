@@ -6,11 +6,12 @@ public class ChangeManager : MonoBehaviour
 {
     public List<GameObject> _pages = new List<GameObject>();
     private PageManager pageManager;
+    
     void Start()
     {
         pageManager = GetComponentInChildren<PageManager>();
     }
-    
+
     public void ChangePageWithChoise(int index)
     {
         _pages[index].SetActive(true);

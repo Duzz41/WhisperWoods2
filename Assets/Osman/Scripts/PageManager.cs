@@ -7,7 +7,7 @@ public class PageManager : MonoBehaviour
 {
     //Sayfanın Id'si
     [SerializeField] private int _pageID;
-    public bool hasChoise;
+    //Bir sonra gidebileceği sayfaların Id'si
     [SerializeField] private int[] _pageChoises;
 
 
@@ -30,9 +30,9 @@ public class PageManager : MonoBehaviour
 
     void OpenPanel()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0)||Input.GetKeyDown(KeyCode.Space))
         {
-            if (hasChoise == false)
+            if (_pageChoises.Length == 1)
             {
                 if (_panelIndex != _panels.Count)
                 {
@@ -42,7 +42,7 @@ public class PageManager : MonoBehaviour
                 else
                 {
                     //buraya sayfa değiştirme animasyonu eklenecek
-                    _changePages.ChangePage(_pageID + 1);
+                    _changePages.ChangePage(_pageChoises[0]);
                 }
             }
             else

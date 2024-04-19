@@ -548,7 +548,7 @@ GameObject:
   - component: {fileID: 1274970161600360536}
   - component: {fileID: 8476330905332350195}
   m_Layer: 5
-  m_Name: PanelWithChoose
+  m_Name: PanelWithChoiseTemplate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -623,7 +623,7 @@ Animator:
   m_GameObject: {fileID: 8294899511316607995}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fefe3e368c3c1b04a9301d16cb27ea7f, type: 2}
+  m_Controller: {fileID: 9100000, guid: e4ba5cb0d3636b54d9418dce793e367d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
