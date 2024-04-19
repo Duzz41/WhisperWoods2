@@ -310,9 +310,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2bc481d41d8194c98b000b3bcb6404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pageID: 3
   hasChoise: 0
-  _pageIndex: 1
-  _panelCount: 4
+  _pageChoises: 
   _panels:
   - {fileID: 707834988}
   - {fileID: 783298884}
@@ -1174,9 +1174,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2bc481d41d8194c98b000b3bcb6404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pageID: 2
   hasChoise: 0
-  _pageIndex: 1
-  _panelCount: 4
+  _pageChoises: 
   _panels:
   - {fileID: 438555900}
   - {fileID: 1888011134}
@@ -1689,6 +1689,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2137511613}
+    - target: {fileID: 2071909484363825915, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 2272008242709824365, guid: 1e5a19b465431f242910d4bace5b5e1f, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2087,6 +2091,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3535176975608200673, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+      propertyPath: _pageChoises.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535176975608200673, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+      propertyPath: _pageChoises.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7211101271228677054, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2184,9 +2196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2bc481d41d8194c98b000b3bcb6404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _pageID: 1
   hasChoise: 1
-  _pageIndex: 1
-  _panelCount: 4
+  _pageChoises: 0300000004000000
   _panels:
   - {fileID: 756679262}
   - {fileID: 983443535}

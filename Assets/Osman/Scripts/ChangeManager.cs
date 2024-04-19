@@ -10,7 +10,7 @@ public class ChangeManager : MonoBehaviour
     {
         pageManager = GetComponentInChildren<PageManager>();
     }
-
+    
     public void ChangePageWithChoise(int index)
     {
         _pages[index].SetActive(true);
