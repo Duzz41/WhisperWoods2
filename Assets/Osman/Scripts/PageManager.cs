@@ -17,31 +17,22 @@ public class PageManager : MonoBehaviour
     private OpenPanels _openPanels;
     private ChangeManager _changePages;
     bool _pageChange = false;
-    bool stopGame = false;
+    private bool stopGame;
 
     void Start()
     {
+        EvntManager.StartListening("NextQue", PanelManagment);
         _openPanels = GetComponentInChildren<OpenPanels>();
         _changePages = GetComponentInParent<ChangeManager>();
         _pageAnim = GetComponent<Animator>();
     }
+
     void Update()
     {
         CloseAnimPage();
-
-        OpenPanel();
-
     }
 
-    void OpenPanel()
-    {
-        if (Input.GetMouseButtonDown(0) || Input.GetKeyDown(KeyCode.Space))
-        {
-            PanelManagment();
-        }
-    }
-
-    void PanelManagment()
+    public void PanelManagment()
     {
         if (stopGame == false)
         {
@@ -49,28 +40,22 @@ public class PageManager : MonoBehaviour
             {
                 if (_panelIndex != _panels.Count)
                 {
-
                     _openPanels.Open(_panels[_panelIndex]);
                     _panelIndex++;
-
                 }
                 else
                 {
-
                     stopGame = true;
                     _changePages.ChangePage(_pageChoises[0]);
                     _pageAnim.SetTrigger("Change");
-
                 }
             }
             else
             {
                 if (_panelIndex != _panels.Count)
                 {
-
                     _openPanels.Open(_panels[_panelIndex]);
                     _panelIndex++;
-
                 }
             }
         }
@@ -85,8 +70,8 @@ public class PageManager : MonoBehaviour
     {
         _changePages.ChangePageWithChoise(index);
         _pageChange = true;
-
     }
+
     public void CloseAnimPage()
     {
         if (_pageChange == true)
@@ -100,4 +85,5 @@ public class PageManager : MonoBehaviour
     {
         this.gameObject.SetActive(false);
     }
+
 }
