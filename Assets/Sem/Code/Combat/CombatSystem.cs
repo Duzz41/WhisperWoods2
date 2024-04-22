@@ -16,8 +16,8 @@ public class CombatSystem : MonoBehaviour
 
 
 
-        EvntManager.StartListening("NextQue", nextQue);
-        combatQueLength = persons.Length + 1;
+        EvntManager.StartListening("NextQ", nextQue);
+        combatQueLength = persons.Length - 1;
         Debug.Log("Combat Que: " + combatQueLength);
         combatCurrentQue = 0;
         Debug.Log("Combat Current Que: " + combatCurrentQue);
@@ -30,15 +30,18 @@ public class CombatSystem : MonoBehaviour
         if (combatQueLength > combatCurrentQue)
         {
             combatCurrentQue++;
+            persons[combatCurrentQue].Playing();
+            Debug.Log("aaa");
         }
+
         if (combatQueLength == combatCurrentQue)
         {
             combatCurrentQue = 0;
         }
+
         if (combatCurrentQue < 0)
         { Debug.LogWarning("combatQueLength < 0"); }
 
-        persons[combatCurrentQue].Playing();
     }
     #endregion
 

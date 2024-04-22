@@ -10,7 +10,8 @@ public class Character : MonoBehaviour
     //critical damage is percent 
     public int criticalDamagePoints = 20;
 
-    private void Start() {
+    private void Start()
+    {
         EvntManager.StartListening<int>("TakeDamage", TakeDamage);
     }
 
@@ -25,7 +26,19 @@ public class Character : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("====PLAYER==== <DEAD>" + Time.time);
-            
+
         }
     }
+
+    public void PlayingState()
+    {
+        Debug.Log("Playing State");
+        EvntManager.TriggerEvent("EnableAllButtons");
+        //EvntManager.TriggerEvent("NextQ");
+
+    }
+
+
+
+
 }

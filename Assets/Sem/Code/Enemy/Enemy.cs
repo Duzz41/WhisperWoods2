@@ -30,6 +30,10 @@ public class Enemy : MonoBehaviour
             
         }
     }
+    public void starter()
+    {
+        StartCoroutine(Playing());
+    }
 
     public IEnumerator Playing()
     {
@@ -52,6 +56,6 @@ public class Enemy : MonoBehaviour
     public void Done()
     {
         Debug.Log("Done");
-        EvntManager.TriggerEvent("NextQue");
+        EvntManager.TriggerEvent("NextQ");
     }
 }
