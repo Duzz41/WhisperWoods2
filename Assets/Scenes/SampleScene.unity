@@ -302,6 +302,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &290059556 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 288970901080486750, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+  m_PrefabInstance: {fileID: 2099862405060892204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24557b0747d20854896cf1b6b30dba42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &412455439
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -529,7 +540,7 @@ MonoBehaviour:
   - {fileID: 412455441}
   - {fileID: 1227466253}
   _pageAnim: {fileID: 0}
-  stopGame: 0
+  _openPanels: []
 --- !u!114 &438091005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -606,7 +617,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6746408705798477904, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
       propertyPath: m_Name
-      value: Panel4
+      value: Panel8
       objectReference: {fileID: 0}
     - target: {fileID: 7544947494852605374, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
       propertyPath: _panels.Array.size
@@ -1126,7 +1137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6746408705798477904, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
       propertyPath: m_Name
-      value: Panel6
+      value: Panel10
       objectReference: {fileID: 0}
     - target: {fileID: 7544947494852605374, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
       propertyPath: _panelImage
@@ -1419,7 +1430,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &774723290
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1484,7 +1495,7 @@ MonoBehaviour:
   - {fileID: 665770099}
   - {fileID: 1029554335}
   _pageAnim: {fileID: 0}
-  stopGame: 0
+  _openPanels: []
 --- !u!114 &774723293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1767,7 +1778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6746408705798477904, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
       propertyPath: m_Name
-      value: Panel7
+      value: Panel11
       objectReference: {fileID: 0}
     - target: {fileID: 7544947494852605374, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
       propertyPath: _panelImage
@@ -2309,6 +2320,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1329101579}
   m_CullTransparentMesh: 1
+--- !u!114 &1402648032 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7258172056593699859, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+  m_PrefabInstance: {fileID: 2099862405060892204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24557b0747d20854896cf1b6b30dba42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1539430157
 GameObject:
   m_ObjectHideFlags: 0
@@ -2529,6 +2551,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2770864765418475584, guid: 7d51b10c59a3a974da853ccf46de3e7c, type: 3}
   m_PrefabInstance: {fileID: 1029554333}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1807620511 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1826167477759680516, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+  m_PrefabInstance: {fileID: 2099862405060892204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24557b0747d20854896cf1b6b30dba42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1809171758
 GameObject:
   m_ObjectHideFlags: 0
@@ -2795,6 +2828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelsIndex: []
+  _buttons: []
 --- !u!224 &36505644970271629
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3114,27 +3148,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1452294809705464981}
   m_CullTransparentMesh: 1
---- !u!95 &1274970160686239329
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8294899511123381698}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e4ba5cb0d3636b54d9418dce793e367d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!222 &1410144980406206824
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3368,7 +3381,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1901019955536037156, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1942567907044457466, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
       propertyPath: m_SizeDelta.x
@@ -3386,6 +3399,22 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0.00062561035
       objectReference: {fileID: 0}
+    - target: {fileID: 3535176975608200673, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+      propertyPath: _openPanels.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3535176975608200673, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+      propertyPath: _openPanels.Array.data[0]
+      value: 
+      objectReference: {fileID: 290059556}
+    - target: {fileID: 3535176975608200673, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+      propertyPath: _openPanels.Array.data[1]
+      value: 
+      objectReference: {fileID: 1402648032}
+    - target: {fileID: 3535176975608200673, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
+      propertyPath: _openPanels.Array.data[2]
+      value: 
+      objectReference: {fileID: 1807620511}
     - target: {fileID: 7211101271228677054, guid: e4b07aff7134c0a469d48999a34f27cd, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3564,6 +3593,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelsIndex: []
+  _buttons: []
 --- !u!224 &2547369084150176374
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3614,6 +3644,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelsIndex: []
+  _buttons: []
 --- !u!95 &2670830057455491952
 Animator:
   serializedVersion: 5
@@ -4284,6 +4315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _panelsIndex: []
+  _buttons: []
 --- !u!224 &4758116968579212060
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5024,7 +5056,7 @@ MonoBehaviour:
   - {fileID: 7574144992495216586}
   - {fileID: 5169090560273488083}
   _pageAnim: {fileID: 0}
-  stopGame: 0
+  _openPanels: []
 --- !u!1 &8294899511123381698
 GameObject:
   m_ObjectHideFlags: 0
@@ -5036,10 +5068,10 @@ GameObject:
   - component: {fileID: 6889214917433747560}
   - component: {fileID: 2147537455730940448}
   - component: {fileID: 7595357158987177795}
-  - component: {fileID: 1274970160686239329}
   - component: {fileID: 8476330907320156874}
+  - component: {fileID: 8476330907320156875}
   m_Layer: 5
-  m_Name: Panel5
+  m_Name: Panel9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5086,6 +5118,30 @@ MonoBehaviour:
     _panels:
     - {fileID: 521952483}
     - {fileID: 1714874127}
+  _buttons:
+  - {fileID: 2272008244480114004}
+  - {fileID: 5698648925346280921}
+--- !u!95 &8476330907320156875
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8294899511123381698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4c6a1b8f34a477b4e9c9cc3359c88aba, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!224 &8531887318658994911
 RectTransform:
   m_ObjectHideFlags: 0
