@@ -11,12 +11,10 @@ public class CombatSystem : MonoBehaviour
     private int combatCurrentQue;
     private void Start()
     {
-
-
-
-
-
         EvntManager.StartListening("NextQ", nextQue);
+
+
+
         combatQueLength = persons.Length - 1;
         Debug.Log("Combat Que: " + combatQueLength);
         combatCurrentQue = 0;
@@ -31,13 +29,10 @@ public class CombatSystem : MonoBehaviour
         {
             combatCurrentQue++;
             persons[combatCurrentQue].Playing();
-            Debug.Log("aaa");
         }
 
         if (combatQueLength == combatCurrentQue)
-        {
-            combatCurrentQue = 0;
-        }
+        { combatCurrentQue = 0; }
 
         if (combatCurrentQue < 0)
         { Debug.LogWarning("combatQueLength < 0"); }

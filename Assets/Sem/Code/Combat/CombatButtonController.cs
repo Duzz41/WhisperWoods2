@@ -12,7 +12,7 @@ public class CombatButtonController : MonoBehaviour
         //triigers
         EvntManager.StartListening("DisableAllButtons", DisableAllButtons);
         EvntManager.StartListening("EnableAllButtons", EnableAllButtons);
-
+        
 
         //for dongusu tum buttonlari childden cekmek icin
         MainButtonGO = this.gameObject;
@@ -20,6 +20,8 @@ public class CombatButtonController : MonoBehaviour
         {
             CombatButtons.Add(MainButtonGO.transform.GetChild(i).GetComponent<Button>());
         }
+        //ilk basta normal durumunda disable olmali gibi
+        DisableAllButtons();
     }
 
     public void DisableAllButtons()
@@ -28,7 +30,7 @@ public class CombatButtonController : MonoBehaviour
         {
             button.enabled = false;
         }
-        Debug.Log(this.name + " " + CombatButtons.Count + " button disabled");
+        Debug.Log("> " + this.name + " " + CombatButtons.Count + " button disabled " +  System.DateTime.Now);
     }
     public void EnableAllButtons()
     {
@@ -36,7 +38,7 @@ public class CombatButtonController : MonoBehaviour
         {
             button.enabled = true;
         }
-        Debug.Log(this.name + " " + CombatButtons.Count + " button enabled");
+        Debug.Log("> " + this.name + " " + CombatButtons.Count + " button enabled " +  System.DateTime.Now);
 
     }
 

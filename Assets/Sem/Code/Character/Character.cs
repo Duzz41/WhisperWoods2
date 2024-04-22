@@ -5,36 +5,50 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    #region var
     public int health = 100;
-    public int damagePoints = 10;
+    public int damagePoint = 10;
     //critical damage is percent 
-    public int criticalDamagePoints = 20;
+    public int criticalDamagePoint = 20;
+    #endregion
 
+    #region class
+    private Attack attack;
+    #endregion
+    private void Awake()
+    {
+        attack = GetComponent<Attack>();
+        attack.coreDamage = damagePoint;
+    }
     private void Start()
     {
         EvntManager.StartListening<int>("TakeDamage", TakeDamage);
     }
 
 
-    public void TakeDamage(int damagePoints)
+    public void TakeDamage(int value)
     {
-        health -= damagePoints;
+        health -= value;
+        CheckLife();
     }
 
     public void CheckLife()
     {
         if (health <= 0)
         {
-            Debug.Log("====PLAYER==== <DEAD>" + Time.time);
-
+            Debug.Log("====PLAYER==== <DEAD>" + System.DateTime.Now);
         }
     }
 
     public void PlayingState()
     {
-        Debug.Log("Playing State");
+        Debug.Log("====PLAYER==== <PLAYING>" + System.DateTime.Now);
+
         EvntManager.TriggerEvent("EnableAllButtons");
+
+
         //EvntManager.TriggerEvent("NextQ");
+
 
     }
 

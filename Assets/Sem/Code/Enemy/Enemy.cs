@@ -10,9 +10,10 @@ public class Enemy : MonoBehaviour
     //critical damage is percent 
     public int criticalDamagePoints = 20;
 
-    private void Start() {
+    private void Start()
+    {
         //bu triggeri tetiikledigin durumda dusmandan kesinlikle ismini alip ona gore tetiklemen lazim
-        EvntManager.StartListening<int>("TakeDamageEnemy"+enemyName, TakeDamageEnemy);
+        EvntManager.StartListening<int>("TakeDamageEnemy" + enemyName, TakeDamageEnemy);
     }
 
 
@@ -27,7 +28,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Debug.Log("====ENEMY (" + enemyName + ")==== <DEAD>" + Time.time);
-            
+
         }
     }
     public void starter()
@@ -47,15 +48,18 @@ public class Enemy : MonoBehaviour
     }
     public void MakeDecision()
     {
-        Debug.Log("Make Decision");
+        Debug.Log("====ENEMY (" + enemyName + ")==== <MAKING DECISION>" + System.DateTime.Now);
+
     }
     public void Attack()
     {
-        Debug.Log("Attack");
+        Debug.Log("====ENEMY (" + enemyName + ")==== <ATTACK>" + System.DateTime.Now);
+
     }
     public void Done()
     {
-        Debug.Log("Done");
+        Debug.Log("====ENEMY (" + enemyName + ")==== <DONE>" + System.DateTime.Now);
+
         EvntManager.TriggerEvent("NextQ");
     }
 }
