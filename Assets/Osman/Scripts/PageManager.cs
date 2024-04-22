@@ -17,12 +17,13 @@ public class PageManager : MonoBehaviour
     private OpenPanels _openPanels;
     private ChangeManager _changePages;
     bool _pageChange = false;
-    private bool stopGame;
+    public bool stopGame;
 
     void Start()
     {
         EvntManager.StartListening("NextQue", PanelManagment);
-        _openPanels = GetComponentInChildren<OpenPanels>();
+        EvntManager.StartListening("IncreaseIndex",IncreasePanelIndex);
+        _openPanels = _panels[_panelIndex].GetComponent<OpenPanels>();
         _changePages = GetComponentInParent<ChangeManager>();
         _pageAnim = GetComponent<Animator>();
     }
@@ -34,14 +35,17 @@ public class PageManager : MonoBehaviour
 
     public void PanelManagment()
     {
+
         if (stopGame == false)
         {
+
             if (_pageChoises.Length == 1)
             {
+
                 if (_panelIndex != _panels.Count)
                 {
                     _openPanels.Open(_panels[_panelIndex]);
-                    _panelIndex++;
+                    IncreasePanelIndex();
                 }
                 else
                 {
@@ -55,15 +59,21 @@ public class PageManager : MonoBehaviour
                 if (_panelIndex != _panels.Count)
                 {
                     _openPanels.Open(_panels[_panelIndex]);
-                    _panelIndex++;
+                    IncreasePanelIndex();
+                    
                 }
             }
         }
     }
 
+    void IncreasePanelIndex()
+    {
+        _panelIndex++;
+    }
+
     public void StopClick()
     {
-        stopGame = false;
+        EvntManager.TriggerEvent("DisableCursor");
     }
 
     public void ChooseNextPage(int index)

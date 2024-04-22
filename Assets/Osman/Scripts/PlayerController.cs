@@ -5,10 +5,16 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool dontClick = false;
 
+    void Start()
+    {
+        EvntManager.StartListening("DisableCursor", DisableClick);
+    }
     void Update()
     {
-        click();
+        if (dontClick == false)
+            click();
     }
 
     void click()
@@ -17,5 +23,13 @@ public class PlayerController : MonoBehaviour
         {
             EvntManager.TriggerEvent("NextQue");
         }
+    }
+
+    void DisableClick()
+    {
+        if (dontClick == false)
+            dontClick = true;
+        else
+            dontClick = false;
     }
 }
