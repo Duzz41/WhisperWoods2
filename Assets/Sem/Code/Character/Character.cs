@@ -45,11 +45,6 @@ public class Character : MonoBehaviour
         Debug.Log("====PLAYER==== <PLAYING>" + System.DateTime.Now);
 
         EvntManager.TriggerEvent("EnableAllButtons");
-
-
-        //EvntManager.TriggerEvent("NextQ");
-
-
     }
 
 

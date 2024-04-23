@@ -20,6 +20,7 @@ public class Enemy : MonoBehaviour
     public void TakeDamageEnemy(int damagePoints)
     {
         health -= damagePoints;
+        Debug.Log("====ENEMY (" + enemyName + ")==== <DAMAGED>   - "+damagePoints +" - " + Time.time);
         //TODO: damage animation trigger
     }
 
@@ -33,6 +34,7 @@ public class Enemy : MonoBehaviour
     }
     public void starter()
     {
+        EvntManager.TriggerEvent("DisableAllButtons");
         StartCoroutine(Playing());
     }
 

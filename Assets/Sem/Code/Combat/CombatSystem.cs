@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class CombatSystem : MonoBehaviour
 {
-    [SerializeField] public Person[] persons;
+    public List<Person> persons;
     private int combatQueLength;
     private int combatCurrentQue;
     private void Start()
@@ -15,29 +15,34 @@ public class CombatSystem : MonoBehaviour
 
 
 
-        combatQueLength = persons.Length - 1;
-        Debug.Log("Combat Que: " + combatQueLength);
+        combatQueLength = persons.Count - 1;
         combatCurrentQue = 0;
-        Debug.Log("Combat Current Que: " + combatCurrentQue);
-        persons[combatCurrentQue].Playing();
-    }
 
-    #region Combat Que
+
+        Debug.Log("Combat Que: " + combatQueLength + " \n Combat Current Que: " + combatCurrentQue);
+        nextQue();
+    }
     public void nextQue()
     {
-        if (combatQueLength > combatCurrentQue)
+        if (combatQueLength >= combatCurrentQue)
         {
+            persons[combatCurrentQue].Assdasdas();
+            Debug.Log("Combat Que: " + combatQueLength + " \n Combat Current Que: " + combatCurrentQue);
             combatCurrentQue++;
-            persons[combatCurrentQue].Playing();
+
+
         }
 
-        if (combatQueLength == combatCurrentQue)
-        { combatCurrentQue = 0; }
+        else
+        {
+            Debug.Log("allahionisikm");
+            combatCurrentQue = 0;
+            persons[combatCurrentQue].Assdasdas();
+            Debug.Log("else Combat Que: " + combatQueLength + " \n Combat Current Que: " + combatCurrentQue);
+        }
 
-        if (combatCurrentQue < 0)
-        { Debug.LogWarning("combatQueLength < 0"); }
 
     }
-    #endregion
+
 
 }
