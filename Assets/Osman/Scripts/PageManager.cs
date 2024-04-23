@@ -27,6 +27,7 @@ public class PageManager : MonoBehaviour
 
     void Start()
     {
+
         EvntManager.StartListening("NextQue", PanelManagment);
         EvntManager.StartListening("IncreaseIndex", IncreasePanelIndex);
 
@@ -35,6 +36,7 @@ public class PageManager : MonoBehaviour
 
         _changePages = GetComponentInParent<ChangeManager>();
         _pageAnim = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -42,12 +44,14 @@ public class PageManager : MonoBehaviour
         CloseAnimPage();
     }
 
+
+    //Panellerin Açılma sırasını kontrol eder.
     public void PanelManagment()
     {
 
         if (_nextPage.Length == 1)
         {
-
+            //Seçeneksiz ara panellerin açılmasını sağlar.
             if (_panelIndex != _panels.Count)
             {
 
@@ -56,7 +60,7 @@ public class PageManager : MonoBehaviour
                 IncreasePanelIndex();
 
             }
-            else
+            else //Seçeneksiz son panelden sonra sayfa değiştirilmesini sağlar.
             {
                 _changePages.ChangePage(_nextPage[0]);
                 _pageAnim.SetTrigger("Change");
@@ -65,7 +69,7 @@ public class PageManager : MonoBehaviour
         }
         else
         {
-
+            //Seçenekli sayfada(Yaptığımız seçeneklerin Yolu değiştirdiği sayfalarda) ara panellerin açılmasını sağlar.
             if (_panelIndex != _panels.Count)
             {
                 _openPanels[_panelIndex].Open();
@@ -76,23 +80,26 @@ public class PageManager : MonoBehaviour
 
     }
 
+    //Açılacak olan Panellerin indexini arttırır. 
     void IncreasePanelIndex()
     {
         _panelIndex++;
     }
 
-
+    //Animasyonlarda tıklamayı ve panel açılmasını engelleyen fonksiyona yönlendirilir.
     public void StopClick()
     {
         EvntManager.TriggerEvent("DisableCursor");
     }
 
+    //Seçtiğimiz Butona göre belirtilen indexteki sayfa açılır. (Index sırası Change Managerda Pageleri koyduğumuz sıraya göre belirlenir)
     public void ChooseNextPage(int index)
     {
         _changePages.ChangePageWithChoise(index);
         _pageChange = true;
     }
 
+    //Sayfa değişimindeki Animasyonu çalıştırır.
     public void CloseAnimPage()
     {
         if (_pageChange == true)
@@ -102,6 +109,7 @@ public class PageManager : MonoBehaviour
         }
     }
 
+    //Kapanma animasyonun sonunda açık olan sayfayı kapatır.
     public void ClosePage()
     {
         this.gameObject.SetActive(false);

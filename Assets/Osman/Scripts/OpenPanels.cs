@@ -8,6 +8,8 @@ using UnityEngine.UI;
 public class OpenPanels : MonoBehaviour
 {
     private Animator _panelAnimator;
+
+    //Panels array i içerisinde sayfa içerisinde oyuncunun yaptığı seçime göre değişecek olan panelleri bulundururuz.
     public Panels[] _panelsIndex;
     public GameObject[] _buttons;
 
