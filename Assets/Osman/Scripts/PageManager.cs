@@ -55,7 +55,6 @@ public class PageManager : MonoBehaviour
             if (_panelIndex != _panels.Count)
             {
 
-                Debug.Log(_panelIndex);
                 _openPanels[_panelIndex].Open();
                 IncreasePanelIndex();
 
