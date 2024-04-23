@@ -17,7 +17,7 @@ public class PageManager : MonoBehaviour
     private List<GameObject> _panels = new List<GameObject>();
 
 
-    private List<OpenPanels> _openPanels;
+    public List<OpenPanels> _openPanels;
 
     private Animator _pageAnim;
     private ChangeManager _changePages;
