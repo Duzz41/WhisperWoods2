@@ -19,15 +19,11 @@ public class OpenPanels : MonoBehaviour
 
     public void ChoosePanel(int i)
     {
-        _panelAnimator = _panelsIndex[i]._panels[0].GetComponentInParent<Animator>();
-        _panelAnimator.SetTrigger("Open");
-        
         foreach (GameObject b in _buttons)
             b.GetComponent<Button>().interactable = false;
         foreach (GameObject a in _panelsIndex[i]._panels)
             a.SetActive(true);
         DontOpen();
-        EvntManager.TriggerEvent("IncreaseIndex");
     }
 
 

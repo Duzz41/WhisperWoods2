@@ -5,7 +5,7 @@ using System;
 
 public class PlayerController : MonoBehaviour
 {
-    public bool dontClick = false;
+    bool dontClick = false;
 
     void Start()
     {

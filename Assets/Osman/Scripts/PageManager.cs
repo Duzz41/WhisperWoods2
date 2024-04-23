@@ -6,19 +6,23 @@ using UnityEngine;
 public class PageManager : MonoBehaviour
 {
     //Sayfanın Id'si
-    [SerializeField] private int _pageID;
+    [SerializeField]
+    private int _pageID;
     //Bir sonra gidebileceği sayfaların Id'si
-    [SerializeField] private int[] _pageChoises;
+    [SerializeField]
+    private int[] _nextPage;
 
 
-    public List<GameObject> _panels = new List<GameObject>();
-    public Animator _pageAnim;
-    int _panelIndex = 0;
-    public List<OpenPanels> _openPanels;
+    [SerializeField]
+    private List<GameObject> _panels = new List<GameObject>();
 
+
+    private List<OpenPanels> _openPanels;
+
+    private Animator _pageAnim;
     private ChangeManager _changePages;
-    bool _pageChange = false;
-
+    private bool _pageChange = false;
+    private int _panelIndex = 0;
 
 
     void Start()
@@ -41,16 +45,20 @@ public class PageManager : MonoBehaviour
     public void PanelManagment()
     {
 
-        if (_pageChoises.Length == 1)
+        if (_nextPage.Length == 1)
         {
+
             if (_panelIndex != _panels.Count)
             {
+
+                Debug.Log(_panelIndex);
                 _openPanels[_panelIndex].Open();
                 IncreasePanelIndex();
+
             }
             else
             {
-                _changePages.ChangePage(_pageChoises[0]);
+                _changePages.ChangePage(_nextPage[0]);
                 _pageAnim.SetTrigger("Change");
             }
 
@@ -72,6 +80,7 @@ public class PageManager : MonoBehaviour
     {
         _panelIndex++;
     }
+
 
     public void StopClick()
     {
