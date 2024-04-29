@@ -8,15 +8,22 @@ using UnityEngine.UI;
 public class OpenPanels : MonoBehaviour
 {
     private Animator _panelAnimator;
+    public ManuelAnimation _MA;
 
     //Panels array i içerisinde sayfa içerisinde oyuncunun yaptığı seçime göre değişecek olan panelleri bulundururuz.
     public Panels[] _panelsIndex;
     public GameObject[] _buttons;
 
+    public void Start()
+    {
+        _MA = GetComponentInChildren<ManuelAnimation>();
+    }
     public void Open()
     {
+
         _panelAnimator = this.GetComponent<Animator>();
         _panelAnimator.SetTrigger("Open");
+        _MA.StartAnim();
     }
 
     public void ChoosePanel(int i)
