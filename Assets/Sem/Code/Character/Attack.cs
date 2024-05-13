@@ -18,7 +18,7 @@ public class Attack : MonoBehaviour
     [Header("heavy attack icin Kritik vurus sans araliklari")]
 
     public int criticalChanceRateForHeavyMin = 10;
-    public int criticalChanceRateForHeavyHeavy = 20;
+    public int criticalChanceRateForHeavyMax = 20;
 
     [Header("Heavy attack icin Kritik vurus araliklari")]
 
@@ -37,9 +37,7 @@ public class Attack : MonoBehaviour
     private void Start()
     {
         //su anlik tahminlerim listening ile degil attack buttonlarindan calisacagi yonunde simdilik bu sekilde bekleytiliyo
-        EvntManager.StartListening("LAttack", AttackLight);
-        EvntManager.StartListening("HAttack", AttackHeavy);
-
+        EvntManager.StartListening<Enemy>("SelectAnEnemy", SelectAnEnemy);
     }
 
     /* 
@@ -58,14 +56,18 @@ public class Attack : MonoBehaviour
 
 
 
-
+    //test edilecek
     public int CalculateCritLight()
     {
-        int critChanceRate = Random.Range(criticalChanceRateForHeavyMin, criticalChanceRateForLightMax);
+        int critChanceRate = Random.Range(criticalValueForLightMin, criticalChanceRateForLightMax);
         int critValue = Random.Range(criticalValueForHeavyMin, criticalValueForHeavyMax);
 
         if (Random.value < (critChanceRate / 100))
-        {
+        {   
+            if (selectedEnemy.weakRate > 0)
+            {
+                critChanceRate = critChanceRate * (2*selectedEnemy.weakRate);
+            }
             Debug.Log("TEST CRIT CHANCE" + critChanceRate + "TEST CRIT " + critValue);
 
             return coreDamage / (critValue / 100);
@@ -73,12 +75,29 @@ public class Attack : MonoBehaviour
 
         return coreDamage;
     }
+    public int CalculateCritHeavy()
+    {
+        int critChanceRate = Random.Range(criticalChanceRateForHeavyMin, criticalChanceRateForHeavyMax);
+        int critValue = Random.Range(criticalValueForHeavyMin, criticalValueForHeavyMax);
+
+        if (Random.value < (critChanceRate / 100))
+        {
+            Debug.Log("TEST CRIT CHANCE FOR HEAVY " + critChanceRate + "TEST CRIT " + critValue);
+
+            return coreDamage / (critValue / 100);
+        }
+
+        return coreDamage;
+    }
+
+
+    //karakterden bu fonksiyonu cagir
     public void AttackLight()
     {
         EvntManager.TriggerEvent("DisableAllButtons");
         if (selectedEnemy == null)
         {
-            Debug.LogWarning("====PLAYER==== <ATTACK-FAILED> "+ System.DateTime.Now);
+            Debug.LogWarning("====PLAYER==== <ATTACK-FAILED> " + System.DateTime.Now);
 
         }
         else
@@ -105,8 +124,36 @@ public class Attack : MonoBehaviour
         kritik seviyesi her dusmanlari farkli olarak etkiler
         %10 - %20 arasinda *test degerleri > core damage uzerinden hesaplanir 
     */
-    private void AttackHeavy()
+    public void AttackHeavy()
     {
+        foreach (Enemy enemy in enemies)
+        {
+            EvntManager.TriggerEvent<int>("TakeDamageEnemy" + enemy.enemyName, CalculateCritHeavy());
+        }
+    }
 
+    public void Weak()
+    {
+        EvntManager.TriggerEvent("DisableAllButtons");
+        if (selectedEnemy == null)
+        {
+            Debug.LogWarning("====PLAYER==== <WEAK-FAILED> " + System.DateTime.Now);
+
+        }
+        else
+        {
+            Debug.Log("====PLAYER==== <WEAK> " + "to > " + selectedEnemy.enemyName + " " + System.DateTime.Now);
+
+
+            
+            EvntManager.TriggerEvent("NextQ");
+
+        }
+    }
+
+    private void SelectAnEnemy(Enemy enemy)
+    {
+        selectedEnemy = enemy;
+        Debug.Log("Enemy selected " + enemy.enemyName);
     }
 }

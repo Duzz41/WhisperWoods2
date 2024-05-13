@@ -11,6 +11,7 @@ public class CombatSystem : MonoBehaviour
     private int combatCurrentQue;
     private void Start()
     {
+        Debug.Log("aaaa");
         EvntManager.StartListening("NextQ", nextQue);
 
 
@@ -39,6 +40,8 @@ public class CombatSystem : MonoBehaviour
             combatCurrentQue = 0;
             persons[combatCurrentQue].Assdasdas();
             Debug.Log("else Combat Que: " + combatQueLength + " \n Combat Current Que: " + combatCurrentQue);
+            combatCurrentQue++;
+
         }
 
 
