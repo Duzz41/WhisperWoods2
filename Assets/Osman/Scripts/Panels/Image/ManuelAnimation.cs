@@ -15,18 +15,20 @@ public class ManuelAnimation : MonoBehaviour
 
     void Start()
     {
-
+        float _width = GetComponent<RectTransform>().rect.width;
+        float _height = GetComponent<RectTransform>().rect.height;
         //Editörde Image Datada belirlemiş olduğum Imageleri olusturur.
         for (int i = 0; i < _imageDatas.Length; i++)
         {
             imageComponent = _imageObject.GetComponent<UnityEngine.UI.Image>();
+            RectTransform rectTransform = _imageObject.GetComponent<RectTransform>();
+            rectTransform.sizeDelta = new Vector2(_width, _height);
             _imageObject.name = _imageDatas[i]._name;
             imageComponent.sprite = _imageDatas[i]._sourceSprite;
+
             GameObject newImage = Instantiate(_imageObject, transform);
             _imagesList.Add(newImage);
         }
-
-
     }
     public void StartAnim()
     {
